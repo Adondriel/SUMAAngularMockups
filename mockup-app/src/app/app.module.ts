@@ -13,6 +13,7 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
+    { path: '', component: AppComponent, pathMatch: 'full'},
   { path: 'search', component: SearchComponent },
   { path: 'home', component: HomeComponent },
   { path: '**', component: AppComponent },
@@ -22,11 +23,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SearchComponent,
-    SearchComponent,
     HomeComponent,
-    ThreeColListComponent, FourColListComponent
+    ThreeColListComponent, FourColListComponent,
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpModule,
